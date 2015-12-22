@@ -1,15 +1,14 @@
 <?php
 
-namespace Xincap\Wechat\Listeners;
+namespace Ue\Listeners;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Xincap\Wechat\Listeners\Wechat\AbstractListener;
+use Ue\Listeners\AbstractListener;
 use Log;
+use Response;
 
-class ExamplePreListener extends AbstractListener {
-
-    private $name = 'example';
+class ChatPostListener extends AbstractListener {
 
     /**
      * Create the event handler.
@@ -26,9 +25,9 @@ class ExamplePreListener extends AbstractListener {
      * @param  Events  $event
      * @return void
      */
-    public function handle($customer, $message, $data = []) {
+    public function handle($customer, $message, $data=[]) {
         $this->customer = $customer;
-        $this->message = $message;
+        $this->message  = $message;
     }
 
 }

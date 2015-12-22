@@ -1,6 +1,6 @@
         'wechat.example.pre' => [
-            \Xincap\Wechat\Listeners\Wechat\ExamplePreListener::class,
+            \Xincap\Wechat\Listeners\ExamplePreListener::class,
         ],
         'wechat.example.post' => [
-            \Xincap\Wechat\Listeners\Wechat\ExamplePostListener::class,
+            \Xincap\Wechat\Listeners\ExamplePostListener::class,
         ],

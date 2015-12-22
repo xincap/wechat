@@ -1,15 +1,15 @@
 <?php
 
-namespace Xincap\Wechat\Listeners;
+namespace Ue\Listeners;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Xincap\Wechat\Listeners\Wechat\AbstractListener;
+use Ue\Listeners\AbstractListener;
 use Log;
 
-class ExamplePreListener extends AbstractListener {
+class JokePreListener extends AbstractListener {
 
-    private $name = 'example';
+    private $name = 'joke';
 
     /**
      * Create the event handler.

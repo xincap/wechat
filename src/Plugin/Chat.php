@@ -1,9 +1,9 @@
 <?php
 
-namespace Xincap\Wechat\Org\Plugin;
+namespace Xincap\Wechat\Plugin;
 
 use Overtrue\Wechat\Message;
-use Xincap\Wechat\Org\Plugin\Base;
+use Xincap\Wechat\Plugin\Base;
 use Log;
 use Event;
 

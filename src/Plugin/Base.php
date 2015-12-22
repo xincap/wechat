@@ -1,6 +1,6 @@
 <?php
 
-namespace Xincap\Wechat\Org\Plugin;
+namespace Xincap\Wechat\Plugin;
 
 use Overtrue\Wechat\Message;
 use Log;

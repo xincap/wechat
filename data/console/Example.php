@@ -3,7 +3,7 @@
 namespace Xincap\Wechat\Org\Plugin;
 
 use Overtrue\Wechat\Message;
-use Ue\Org\Plugin\Base;
+use Xincap\Wechat\Plugin\Base;
 use Log;
 use Event;
 

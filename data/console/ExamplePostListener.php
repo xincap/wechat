@@ -4,7 +4,7 @@ namespace Xincap\Wechat\Listeners\Wechat;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Ue\Listeners\Wechat\AbstractListener;
+use Xincap\Wechat\Listeners\Wechat\AbstractListener;
 use Log;
 use Response;
 

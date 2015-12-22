@@ -19,6 +19,8 @@ class Wechat extends Command {
      * @var string
      */
     protected $description = 'Create a new wechat function';
+    
+    protected $filePath;
 
     /**
      * Create a new command instance.
@@ -40,7 +42,9 @@ class Wechat extends Command {
         
         $lower = $this->underLower($name);
         
-        $root = dirname(app_path()) . '/data/console/';
+        $this->filePath = dirname(dirname(__DIR__));
+        
+        $root = $this->filePath . '/data/console/';
 
         $class = $root . 'Example.php';
         $pre = $root . 'ExamplePreListener.php';
@@ -91,7 +95,9 @@ class Wechat extends Command {
 
         //file
         $name = $name . '.php';
-        $file = app_path('Org/Plugin/' . $name);
+        
+        $file = $this->filePath . '/Plugin/' . $name;
+        
         if (file_exists($file)) {
             $this->error($file . ' Already Exist.');
             exit;
@@ -113,7 +119,7 @@ class Wechat extends Command {
         $content = str_replace('ExamplePostListener', $name . 'PostListener', $content);
 
         $name = $name . 'PostListener.php';
-        $file = app_path('Listeners/Wechat/' . $name);
+        $file = $this->filePath . '/Listeners/' . $name;
 
         if (file_exists($file)) {
             $this->error($file . ' Already Exist.');
@@ -137,7 +143,7 @@ class Wechat extends Command {
         $content = str_replace("'example'", "'{$lower}'", $content);
 
         $name = $name . 'PreListener.php';
-        $file = app_path('Listeners/Wechat/' . $name);
+        $file = $this->filePath . '/Listeners/' . $name;
 
         if (file_exists($file)) {
             $this->error($file . ' Already Exist.');
@@ -160,7 +166,7 @@ class Wechat extends Command {
         $content = str_replace('ExamplePreListener', $name . 'PreListener', $content);
         $content = str_replace('ExamplePostListener', $name . 'PostListener', $content);
 
-        $file = app_path('Providers/WechatServiceProvier.php');
+        $file = dirname(__DIR__) .'/Providers/XincapWechatServiceProvider.php';
 
         $text = file_get_contents($file);
         $old = "protected \$listen = [";

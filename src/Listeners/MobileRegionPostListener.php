@@ -1,15 +1,14 @@
 <?php
 
-namespace Xincap\Wechat\Listeners;
+namespace Ue\Listeners;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Xincap\Wechat\Listeners\Wechat\AbstractListener;
+use Ue\Listeners\AbstractListener;
 use Log;
+use Response;
 
-class ExamplePreListener extends AbstractListener {
-
-    private $name = 'example';
+class MobileRegionPostListener extends AbstractListener {
 
     /**
      * Create the event handler.

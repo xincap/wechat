@@ -1,6 +1,6 @@
 <?php
 
-namespace Ue\Listeners\Wechat;
+namespace Xincap\Wechat\Listeners\Wechat;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;

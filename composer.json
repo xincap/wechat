@@ -1,0 +1,22 @@
+{
+    "name": "xincap/wechat",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xincap",
+            "email": "xincap@yeah.net"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "Xincap\\Wechat\\": "src/xincap/wechat/src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "overtrue/wechat": "~2.0"
+    }
+}

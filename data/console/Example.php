@@ -1,6 +1,6 @@
 <?php
 
-namespace Ue\Org\Plugin;
+namespace Xincap\Wechat\Org\Plugin;
 
 use Overtrue\Wechat\Message;
 use Ue\Org\Plugin\Base;

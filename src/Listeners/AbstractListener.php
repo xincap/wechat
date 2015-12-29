@@ -1,9 +1,9 @@
 <?php
 
-namespace Ue\Listeners;
+namespace Xincap\Wechat\Listeners;
 
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\QueXincap\Wechat\InteractsWithQueue;
+use Illuminate\Contracts\QueXincap\Wechat\ShouldQueue;
 use Log;
 use Response;
 
@@ -13,7 +13,7 @@ class AbstractListener {
     
     /**
      *
-     * @var \Ue\Model\Customer 
+     * @var \Xincap\Wechat\Model\Customer 
      */
     protected $customer;
 

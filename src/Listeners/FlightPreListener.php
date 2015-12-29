@@ -1,10 +1,10 @@
 <?php
 
-namespace Ue\Listeners;
+namespace Xincap\Wechat\Listeners;
 
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Ue\Listeners\AbstractListener;
+use Illuminate\QueXincap\Wechat\InteractsWithQueue;
+use Illuminate\Contracts\QueXincap\Wechat\ShouldQueue;
+use Xincap\Wechat\Listeners\AbstractListener;
 use Log;
 
 class FlightPreListener extends AbstractListener {

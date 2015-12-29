@@ -13,7 +13,7 @@ class AbstractListener {
     
     /**
      *
-     * @var \Xincap\Wechat\Model\Customer 
+     * @var \Illuminate\Database\Eloquent\Model 
      */
     protected $customer;
 

@@ -4,6 +4,7 @@ namespace Xincap\Wechat\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Xincap\Wechat\Console\Commands\Wechat;
+use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 
 class XincapWechatServiceProvider extends ServiceProvider {
 

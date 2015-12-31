@@ -1,19 +1,13 @@
 {
-    "name": "xincap/wechat",
+    "name": "xincap/weixin",
+    "require": {
+        "laravel/laravel": "5.2.*"
+    },
     "license": "MIT",
     "authors": [
         {
             "name": "Xincap",
             "email": "xincap@yeah.net"
         }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Xincap\\Wechat\\": "src/"
-        }
-    },
-    "require": {
-        "php": ">=5.5.9",
-        "overtrue/wechat": "~2.0"
-    }
+    ]
 }

@@ -82,9 +82,12 @@ class XincapWechatServiceProvider extends ServiceProvider {
     }
 
     public function register() {
+        //$this->commands(['make.wechat'=> new Wechat()]);
         $this->app['command.make.wechat'] = $this->app->share(function ($app) {
             return new Wechat();
         });
+        
+        $this->commands('command.make.wechat');
     }
 
     public function provides() {

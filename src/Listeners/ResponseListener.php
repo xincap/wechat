@@ -27,7 +27,6 @@ class ResponseListener extends AbstractListener {
     public function handle($wechat, $message, $data = []) {
         $this->wechat = $wechat;
         $this->message = $message;
-        Log::error('wechat：'.$this->wechat->app_id);
     }
 
 }

@@ -27,11 +27,7 @@ class Loader {
 
     public static function proccess(Wechat $wechat, $message){
         
-        DB::enableQueryLog();
-        
-        $wx = Wechat::find(1);
-        
-        $plugins    = $wx->plugins;
+        $plugins    = $wechat->plugins;
         if(!count($plugins)){
             return Message::make('text')->content('功能尚未开启.');
         }

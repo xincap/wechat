@@ -35,6 +35,7 @@ class Base {
     }
 
     public function getResult() {
+        Event::fire('wechat.response', [$this->customer, $this->message]);
         return $this->result;
     }
 

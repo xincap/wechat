@@ -69,6 +69,9 @@ class XincapWechatServiceProvider extends ServiceProvider {
         'wechat.flight.post' => [
             \Xincap\Wechat\Listeners\FlightPostListener::class,
         ],
+        'wechat.response' => [
+            \Xincap\Wechat\Listeners\ResponseListener::class,
+        ],
     ];
 
     /**

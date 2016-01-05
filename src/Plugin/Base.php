@@ -37,8 +37,10 @@ class Base {
     }
 
     public function getResult() {
-        $data   = ['name'=>$this->name];
-        Event::fire('wechat.response', [$this->customer, $this->message, $data], true);
+        $data   = ['name'=>$this->name. md5(time())];
+        if($this->result){
+            Event::fire('wechat.response', [$this->customer, $this->message, $data], false);
+        }
         return $this->result;
     }
 

@@ -9,8 +9,6 @@ use Log;
 
 class ResponseListener extends AbstractListener {
 
-    private $name = 'response';
-
     /**
      * Create the event handler.
      *
@@ -29,7 +27,7 @@ class ResponseListener extends AbstractListener {
     public function handle($customer, $message, $data = []) {
         $this->customer = $customer;
         $this->message = $message;
-        Log::error(var_export($data,TRUE));
+        Log::error(123);
     }
 
 }

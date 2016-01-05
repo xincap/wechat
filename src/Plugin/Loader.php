@@ -43,9 +43,8 @@ class Loader {
         $list   = self::plugins();
         
         foreach ($list as $key => $plugin) {
-            if(array_key_exists($key, self::$fun)){
-                $fun    = self::$fun[$key];
-                $s = (new $fun($wechat, $message));
+            if(in_array($key, self::$fun)){
+                $s = (new $plugin($wechat, $message));
                 if ($s->getResult()) {
                     return $s->getResult();
                 }

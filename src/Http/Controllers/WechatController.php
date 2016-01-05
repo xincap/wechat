@@ -18,7 +18,7 @@ class WechatController extends Controller {
      */
     public function index() {
 
-        $appId = Request::get('app_id', 123);
+        $appId = Request::get('app_id', null);
 
         $wechat = Wechat::where(['app_id' => $appId])->first();
         

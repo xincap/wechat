@@ -6,6 +6,7 @@ use Overtrue\Wechat\Message;
 use Ue\Model\Wechat;
 use DB;
 use Log;
+use Event;
 
 class Loader {
     
@@ -40,8 +41,10 @@ class Loader {
         
         foreach ($list as $key => $plugin) {
             if(in_array($key, self::$fun)){
+                $data   = ['name'=>$key];
                 $s = (new $plugin($wechat, $message, $key));
                 if ($s->getResult()) {
+                    Event::fire('wechat.response', [$wechat, $message, $data], false);
                     return $s->getResult();
                 }
             }

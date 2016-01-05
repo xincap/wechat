@@ -8,14 +8,15 @@ use Event;
 
 class Base {
 
-    protected $message;
-    protected $customer;
-    protected $error = true;
-    protected $result;
-    protected $name;
-    
+    protected $message  = null;
+    protected $customer = null;
+    protected $result   = null;
+    protected $name     = null;
+    public static $i=0;
+            
     function __construct($customer, $message, $className) {
-        $this->message = $message;
+        $this->result   = null;
+        $this->message  = $message;
         $this->customer = $customer;
         $this->name     = $className;
         $this->process();
@@ -37,10 +38,6 @@ class Base {
     }
 
     public function getResult() {
-        $data   = ['name'=>$this->name. md5(time())];
-        if($this->result){
-            Event::fire('wechat.response', [$this->customer, $this->message, $data], false);
-        }
         return $this->result;
     }
 

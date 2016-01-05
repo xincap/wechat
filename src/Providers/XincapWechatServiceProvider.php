@@ -14,7 +14,7 @@ class XincapWechatServiceProvider extends ServiceProvider {
      *
      * @var bool
      */
-    protected $defer = false;
+    protected $defer = true;
 
     /**
      * The event listener mappings for the application.
@@ -82,7 +82,11 @@ class XincapWechatServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot(DispatcherContract $events) {
-
+        
+        //$events = $this->app['events'];
+        
+        Log::error(get_class($events));
+        
         foreach ($this->listen as $event => $listeners) {
             foreach ($listeners as $listener) {
                 $events->listen($event, $listener);
@@ -95,13 +99,6 @@ class XincapWechatServiceProvider extends ServiceProvider {
         $this->app['command.make.wechat'] = $this->app->share(function ($app) {
             return new Wechat();
         });
-        
-        foreach ($this->listen as $event => $listeners) {
-            foreach ($listeners as $listener) {
-                $this->app['events']->listen($event, $listener);
-            }
-        }
-        
         $this->commands('command.make.wechat');
     }
 

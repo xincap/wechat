@@ -2,8 +2,8 @@
 
 namespace Xincap\Wechat\Listeners;
 
-use Illuminate\QueXincap\Wechat\InteractsWithQueue;
-use Illuminate\Contracts\QueXincap\Wechat\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Log;
 use Response;
 

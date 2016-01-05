@@ -18,7 +18,7 @@ class JieMeng extends Base {
             return null;
         }
 
-        $response = Event::fire('wechat.jie_meng.pre', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.jie_meng.pre', [$this->wechat, $this->message], true);
 
         if ($response) {
             $this->result = $response;
@@ -29,7 +29,7 @@ class JieMeng extends Base {
         $url = 'http://api.avatardata.cn/ZhouGongJieMeng/LookUp?key=' . $key . '&keyword=' . $word;
         $result = $this->getRequest($url);
 
-        $response = Event::fire('wechat.jie_meng.post', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.jie_meng.post', [$this->wechat, $this->message], true);
         if ($response) {
             $this->result = $response;
             return true;

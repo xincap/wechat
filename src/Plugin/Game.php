@@ -18,14 +18,14 @@ class Game extends Base {
             return null;
         }
 
-        $response = Event::fire('wechat.game.pre', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.game.pre', [$this->wechat, $this->message], true);
 
         if ($response) {
             $this->result   = $response;
             return true;
         }
 
-        $response = Event::fire('wechat.game.post', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.game.post', [$this->wechat, $this->message], true);
         if ($response) {
             $this->result   = $response;
             return true;

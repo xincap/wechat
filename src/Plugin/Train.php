@@ -15,7 +15,7 @@ class Train extends Base {
             return null;
         }
 
-        $response = Event::fire('wechat.train.pre', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.train.pre', [$this->wechat, $this->message], true);
 
         if ($response) {
             $this->result = $response;
@@ -31,7 +31,7 @@ class Train extends Base {
         $url = $url . '&endStation=' . $to . '&searchType=stasta&date=' . $date;
         $url = $url . '&sort=3&wakeup=1';
 
-        $response = Event::fire('wechat.train.post', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.train.post', [$this->wechat, $this->message], true);
         if ($response) {
             $this->result = $response;
             return true;

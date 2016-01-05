@@ -18,7 +18,7 @@ class Joke extends Base {
             return null;
         }
 
-        $response = Event::fire('wechat.joke.pre', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.joke.pre', [$this->wechat, $this->message], true);
 
         if ($response) {
             $this->result = $response;
@@ -26,7 +26,7 @@ class Joke extends Base {
         }
 
 
-        $response = Event::fire('wechat.joke.post', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.joke.post', [$this->wechat, $this->message], true);
         if ($response) {
             $this->result = $response;
             return true;

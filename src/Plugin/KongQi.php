@@ -18,7 +18,7 @@ class KongQi extends Base {
             return null;
         }
 
-        $response = Event::fire('wechat.kong_qi.pre', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.kong_qi.pre', [$this->wechat, $this->message], true);
 
         if ($response) {
             $this->result = $response;
@@ -32,7 +32,7 @@ class KongQi extends Base {
 
         $result = $this->getRequest($url);
 
-        $response = Event::fire('wechat.kong_qi.post', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.kong_qi.post', [$this->wechat, $this->message], true);
         if ($response) {
             $this->result = $response;
             return true;

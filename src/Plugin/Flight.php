@@ -15,7 +15,7 @@ class Flight extends Base {
             return null;
         }
 
-        $response = Event::fire('wechat.flight.pre', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.flight.pre', [$this->wechat, $this->message], true);
 
         if ($response) {
             $this->result = $response;
@@ -32,7 +32,7 @@ class Flight extends Base {
         $url = 'http://touch.qunar.com/h5/flight/flightlist?';
         $url = $url . 'startCity=' . $from . '&destCity=' . $to . '&startDate=' . $date;
 
-        $response = Event::fire('wechat.flight.post', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.flight.post', [$this->wechat, $this->message], true);
         if ($response) {
             $this->result = $response;
             return true;

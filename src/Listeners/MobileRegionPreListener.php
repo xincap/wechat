@@ -26,8 +26,8 @@ class MobileRegionPreListener extends AbstractListener {
      * @param  Events  $event
      * @return void
      */
-    public function handle($customer, $message, $data = []) {
-        $this->customer = $customer;
+    public function handle($wechat, $message, $data = []) {
+        $this->wechat = $wechat;
         $this->message = $message;
     }
 

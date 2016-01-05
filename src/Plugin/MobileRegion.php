@@ -18,7 +18,7 @@ class MobileRegion extends Base {
             return null;
         }
 
-        $response = Event::fire('wechat.mobile_region.pre', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.mobile_region.pre', [$this->wechat, $this->message], true);
 
         if ($response) {
             $this->result = $response;
@@ -30,7 +30,7 @@ class MobileRegion extends Base {
         $url = 'http://apis.baidu.com/showapi_open_bus/mobile/find?num=' . trim($no);
         $result = $this->getRequest($url);
 
-        $response = Event::fire('wechat.mobile_region.post', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.mobile_region.post', [$this->wechat, $this->message], true);
         if ($response) {
             $this->result = $response;
             return true;

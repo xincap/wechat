@@ -15,7 +15,7 @@ class Dream extends Base {
             return null;
         }
 
-        $response = Event::fire('wechat.dream.pre', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.dream.pre', [$this->wechat, $this->message], true);
 
         if ($response) {
             $this->result = $response;
@@ -23,7 +23,7 @@ class Dream extends Base {
         }
 
 
-        $response = Event::fire('wechat.dream.post', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.dream.post', [$this->wechat, $this->message], true);
         if ($response) {
             $this->result = $response;
             return true;

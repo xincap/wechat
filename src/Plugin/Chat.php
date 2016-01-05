@@ -14,7 +14,7 @@ class Chat extends Base {
 
     public function process() {
 
-        $response = Event::fire('wechat.chat.pre', [$this->customer, $this->message], true);
+        $response = Event::fire('wechat.chat.pre', [$this->wechat, $this->message], true);
 
         if ($response) {
             return $response;
@@ -27,7 +27,7 @@ class Chat extends Base {
         $ret = $client->get($url);
         $ret = json_decode($ret->getBody(), true);
 
-        $response = Event::fire('wechat.chat.post', [$this->customer, $this->message, ['data' => $ret]], true);
+        $response = Event::fire('wechat.chat.post', [$this->wechat, $this->message, ['data' => $ret]], true);
 
         if ($response) {
             return $response;

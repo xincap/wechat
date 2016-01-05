@@ -2,10 +2,10 @@
 
 namespace Xincap\Wechat\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Xincap\Wechat\Console\Commands\Wechat;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
-
+use Illuminate\Support\ServiceProvider;
+use Log;
 class XincapWechatServiceProvider extends ServiceProvider {
 
     /**
@@ -80,8 +80,8 @@ class XincapWechatServiceProvider extends ServiceProvider {
      * @param  \Illuminate\Contracts\Events\Dispatcher  $events
      * @return void
      */
-    public function boot(DispatcherContract $events) {
-        parent::boot($events);
+    public function boot() {
+
     }
 
     public function register() {
@@ -91,6 +91,7 @@ class XincapWechatServiceProvider extends ServiceProvider {
         });
         
         $this->commands('command.make.wechat');
+        Log::error('event service register here');
     }
 
     public function provides() {

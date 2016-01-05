@@ -25,7 +25,6 @@ class Game extends Base {
             return true;
         }
 
-
         $response = Event::fire('wechat.game.post', [$this->customer, $this->message], true);
         if ($response) {
             $this->result   = $response;

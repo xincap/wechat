@@ -29,6 +29,7 @@ class TrainPreListener extends AbstractListener {
     public function handle($customer, $message, $data = []) {
         $this->customer = $customer;
         $this->message = $message;
+        Log::error($this->name);
     }
 
 }

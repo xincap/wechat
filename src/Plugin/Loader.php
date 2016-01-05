@@ -40,7 +40,7 @@ class Loader {
         
         foreach ($list as $key => $plugin) {
             if(in_array($key, self::$fun)){
-                $s = (new $plugin($wechat, $message));
+                $s = (new $plugin($wechat, $message, $key));
                 if ($s->getResult()) {
                     return $s->getResult();
                 }

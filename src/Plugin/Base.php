@@ -12,13 +12,15 @@ class Base {
     protected $customer;
     protected $error = true;
     protected $result;
-
-    function __construct($customer, $message) {
+    protected $name;
+    
+    function __construct($customer, $message, $className) {
         $this->message = $message;
         $this->customer = $customer;
+        $this->name     = $className;
         $this->process();
     }
-    
+
     protected function getRequest($url) {
         $ch = curl_init();
         // 添加apikey到header
@@ -35,7 +37,8 @@ class Base {
     }
 
     public function getResult() {
-        Event::fire('wechat.response', [$this->customer, $this->message]);
+        $data   = ['name'=>$this->name];
+        Event::fire('wechat.response', [$this->customer, $this->message, $data], true);
         return $this->result;
     }
 

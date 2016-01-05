@@ -1,6 +1,6 @@
 <?php
 
-namespace Xincap\Wechat\Providers;
+namespace Xincap\Wechat;
 
 use Xincap\Wechat\Console\Commands\Wechat;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
@@ -81,17 +81,14 @@ class XincapWechatServiceProvider extends ServiceProvider {
      * @param  \Illuminate\Contracts\Events\Dispatcher  $events
      * @return void
      */
-    public function boot(DispatcherContract $events) {
-        
-        //$events = $this->app['events'];
-        
-        Log::error(get_class($events));
+    public function boot() {
         
         foreach ($this->listen as $event => $listeners) {
             foreach ($listeners as $listener) {
-                $events->listen($event, $listener);
+                $this->app['events']->listen($event, $listener);
             }
         }
+        
     }
 
     public function register() {

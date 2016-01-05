@@ -13,8 +13,8 @@ class AbstractListener {
     
     /**
      *
-     * @var \Illuminate\Database\Eloquent\Model 
+     * @var \Ue\Model\Wechat 
      */
-    protected $customer;
+    protected $wechat;
 
 }

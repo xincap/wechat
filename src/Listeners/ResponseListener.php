@@ -24,10 +24,10 @@ class ResponseListener extends AbstractListener {
      * @param  Events  $event
      * @return void
      */
-    public function handle($customer, $message, $data = []) {
-        $this->customer = $customer;
+    public function handle($wechat, $message, $data = []) {
+        $this->wechat = $wechat;
         $this->message = $message;
-        Log::error(123);
+        Log::error('wechat：'.$this->wechat->app_id);
     }
 
 }

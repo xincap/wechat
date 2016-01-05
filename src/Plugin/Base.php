@@ -9,15 +9,15 @@ use Event;
 class Base {
 
     protected $message  = null;
-    protected $customer = null;
+    protected $wechat = null;
     protected $result   = null;
     protected $name     = null;
     public static $i=0;
             
-    function __construct($customer, $message, $className) {
+    function __construct($wechat, $message, $className) {
         $this->result   = null;
         $this->message  = $message;
-        $this->customer = $customer;
+        $this->wechat = $wechat;
         $this->name     = $className;
         $this->process();
     }

@@ -7,7 +7,7 @@ use Overtrue\Wechat\Server;
 use Overtrue\Wechat\Message;
 use Request;
 use Ue\Model\Wechat;
-use Xincap\Wechat\Plugin\Loader;
+use Xincap\Wechat\WechatApplication;
 
 class WechatController extends Controller {
 
@@ -29,7 +29,7 @@ class WechatController extends Controller {
         $server = new Server($wechat->app_id, $wechat->token, $wechat->des_key);
         
         $server->on('message', function($message) use ($wechat) {
-            return Loader::proccess($wechat, $message);
+            return WechatApplication::proccess($wechat, $message);
         });
         
         return $server->serve();

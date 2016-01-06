@@ -1,6 +1,6 @@
 <?php
 
-namespace Xincap\Wechat\Plugin;
+namespace Xincap\Wechat;
 
 use Overtrue\Wechat\Message;
 use Ue\Model\Wechat;
@@ -8,7 +8,7 @@ use DB;
 use Log;
 use Event;
 
-class Loader {
+class WechatApplication {
     
     private static $fun = [];
     
